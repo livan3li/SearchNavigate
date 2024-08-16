@@ -1,0 +1,2 @@
+dotnet dotnet-ef migrations add FirstMigraiton --context SearchNavigateDbContext --project API/Infrastructure/Persistence --startup-project API/WebApdotnet 
+dotnet-ef database update --context SearchNavigateDbContext  --project Infrastructure/Persistence --startup-project API

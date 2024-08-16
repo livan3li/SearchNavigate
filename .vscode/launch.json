@@ -1,0 +1,29 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "API Debug",
+         "type": "coreclr",
+         "request": "launch",
+         "preLaunchTask": "build",
+         "program": "./bin/Debug/net8.0/API.dll",
+         "args": [],
+         "cwd": "${workspaceFolder}/API",
+         "console": "internalConsole",
+         "stopAtEntry": false,
+         "internalConsoleOptions": "neverOpen",
+         "logging": {
+            "moduleLoad": false
+         },
+         "launchSettingsFilePath": "${workspaceFolder}/API/Properties/launchSettings.json",
+         "launchSettingsProfile": "http",
+         "launchBrowser": {
+            "enabled": true,
+            "linux": {
+               "command": "xdg-open",
+               "args": "${auto-detect-url}/swagger"
+            }
+         }
+      }
+   ]
+}

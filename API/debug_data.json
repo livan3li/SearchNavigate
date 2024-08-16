@@ -1,0 +1,113 @@
+[
+  {
+    "CategoryId": "1f341f76-b19b-4de8-910d-7bd4cb959e73",
+    "Products": [
+      {
+        "Product": {
+          "ProductId": "6daef76c-d8f8-4066-a927-d5e7cb44c798",
+          "ProductName": "Pandora Moments Snake Chain Bracelet",
+          "CategoryName": "Jewelry"
+        },
+        "Count": 19
+      },
+      {
+        "Product": {
+          "ProductId": "79164245-005f-40a9-b820-d425a92832fa",
+          "ProductName": "Swarovski Attract Choker",
+          "CategoryName": "Jewelry"
+        },
+        "Count": 15
+      },
+      {
+        "Product": {
+          "ProductId": "f0458b27-5642-4dd9-9ad9-be87754a6b9c",
+          "ProductName": "Swarovski Attract Trilogy Ring",
+          "CategoryName": "Jewelry"
+        },
+        "Count": 15
+      },
+      {
+        "Product": {
+          "ProductId": "46aba65a-89f7-4f6a-a36d-6b8deb3b97ca",
+          "ProductName": "Tiffany & Co. Hardwear Link Bracelet",
+          "CategoryName": "Jewelry"
+        },
+        "Count": 14
+      }
+    ]
+  },
+  {
+    "CategoryId": "3604a037-72bc-4554-a050-fe011199e26e",
+    "Products": [
+      {
+        "Product": {
+          "ProductId": "d2dcf8cf-c148-4b75-ad8d-ed27bc167e14",
+          "ProductName": "The Starless Sea by Erin Morgenstern",
+          "CategoryName": "Books"
+        },
+        "Count": 14
+      },
+      {
+        "Product": {
+          "ProductId": "88ef1826-8082-4f77-b4f4-92775582332a",
+          "ProductName": "The Body Keeps the Score by Bessel van der Kolk",
+          "CategoryName": "Books"
+        },
+        "Count": 13
+      },
+      {
+        "Product": {
+          "ProductId": "3ec9298b-c410-4d5f-ba3e-bd6e5da0f9e0",
+          "ProductName": "Where the Crawdads Sing by Delia Owens",
+          "CategoryName": "Books"
+        },
+        "Count": 13
+      },
+      {
+        "Product": {
+          "ProductId": "52c16168-4419-4713-9473-b066c401a960",
+          "ProductName": "The Hunger Games by Suzanne Collins",
+          "CategoryName": "Books"
+        },
+        "Count": 13
+      }
+    ]
+  },
+  {
+    "CategoryId": "7c147530-4ef4-4046-bb57-c20c7fd6a102",
+    "Products": [
+      {
+        "Product": {
+          "ProductId": "0c973672-8924-4a1b-b9a2-627d23643f6f",
+          "ProductName": "PlayStation 5 Console",
+          "CategoryName": "Electronics"
+        },
+        "Count": 14
+      },
+      {
+        "Product": {
+          "ProductId": "02b3a99b-56d6-481b-a2b8-650e618c6782",
+          "ProductName": "Sony WH-1000XM4 Headphones",
+          "CategoryName": "Electronics"
+        },
+        "Count": 14
+      },
+      {
+        "Product": {
+          "ProductId": "7a05e010-7be7-4778-a34a-8248474eb802",
+          "ProductName": "Samsung QN900A Neo QLED 8K TV",
+          "CategoryName": "Electronics"
+        },
+        "Count": 13
+      },
+      {
+        "Product": {
+          "ProductId": "1143f73b-86ee-44c2-8943-1608ba773ddf",
+          "ProductName": "ASUS ProArt PA278QV Monitor",
+          "CategoryName": "Electronics"
+        },
+        "Count": 13
+      }
+    ]
+  }
+]

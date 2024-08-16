@@ -1,0 +1,13 @@
+
+
+   /// <summary>
+   /// Retrieves the categorized products based on the provided list of top 3 categories.
+   /// </summary>
+   /// <param name="top3Categories">The list of top 3 categories is used to filter the order items based on the category ID.</param>
+   /// <returns>Returns 10 bestseller products based on given 3 categories.</returns>
+
+      /// <summary>
+   /// Retrieves the top 3 categories of products viewed by a user.
+   /// </summary>
+   /// <param name="userId">The ID of the user.</param>
+   /// <returns>A tuple containing the list of top 3 category IDs and the user's username.</returns>

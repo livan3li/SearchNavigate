@@ -1,0 +1,102 @@
+@startuml Search & Navigation
+
+actor User
+
+[PostgreSQL DB]
+
+node "API"{
+   [GET: ViewBasedSuggestion]
+   [GET: BrowsingHistory]
+   [DELETE: Product] 
+}
+
+node "Common"{
+   package "Request"{
+      [DeleteBrowsingHistoryCommand]
+      [QueryBestSeller]
+      [QueryBrowsingHistory]
+   }
+
+   package "ViewModel"{
+      [ProductRecommendView]
+      [BrowsingHistoryView]
+   }
+}
+
+node "Web APP"{
+   package "Application"{
+      [Commands]
+      [Queries] 
+   }
+   package "Persistence"{
+      [Generic Repository]
+      [Repositories]
+      package "Context" {
+         [Data Seeding]
+         [SearchNavigateContext]
+         [DbContext]
+      }
+      [Migrations]
+   }
+   package "Domain"{
+      ' left to right direction
+      agent UserEntity
+      agent Category
+      agent Product
+      agent Order
+      agent Ordered_Items
+      agent ProductViewHistory
+   }
+}
+
+node "MicroServices" {
+   [StreamReader App]
+   [ViewProducer App]
+}
+
+' User and Common
+[Common] <-- User : User Interacts with
+
+' Common and API 
+[API] <-- [Request] : Request is sent
+[ViewModel] <-- [API]  : Response is got
+
+' API End-Points
+[GET: ViewBasedSuggestion] --> [Queries] : BestSeller Products
+[GET: BrowsingHistory] --> [Queries] :Get last 10 products
+[DELETE: Product] --> [Commands]
+
+[viewHistory.json] <-- [ViewProducer App] : Reads from.
+[Kafka] <-- [ViewProducer App] : PUSHs an event.
+[StreamReader App] -->[Kafka] : POPs an event.
+[StreamReader App] --> [PostgreSQL DB] : Writes View Event to DB
+
+' Application
+[Commands] ---> [Repositories] : Calls
+[Queries] ---> [Repositories] : Calls
+
+' Repositories to Domain
+[UserEntity] <... [Repositories] : Includes
+[Product] <... [Repositories] : Includes
+[Category] <... [Repositories] : Includes
+[Order] <... [Repositories] : Includes
+[Ordered_Items] <... [Repositories] : Includes
+[ProductViewHistory] <... [Repositories] : Includes
+
+' SearchNavigateContext to Domain
+[SearchNavigateContext] --> [DbContext] : Inherits from
+[SearchNavigateContext] --> [UserEntity]  : Includes
+[SearchNavigateContext] --> [Product]  : Includes
+[SearchNavigateContext] --> [Category]  : Includes
+[SearchNavigateContext] --> [Order]  : Includes
+[SearchNavigateContext] --> [Ordered_Items]  : Includes
+[SearchNavigateContext] --> [ProductViewHistory] 
+
+' Other Persistence Members
+[SearchNavigateContext] <- [Data Seeding] : Includes
+[Generic Repository] <-- [Repositories] : Inherits from
+[DbContext] <-- [Generic Repository] : Inherits from
+[DbContext] --> [PostgreSQL DB] : Mutates, Queries, Inserts ...
+
+
+@enduml
