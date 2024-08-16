@@ -13,3 +13,5 @@ NOTE: To be able to run and start to project, there are some things that should 
       1. Infrastructure/Persistence/Context/SearchNavigateContext.cs : line 25
       2. API/appsettings.json : line 9
       3. MicroServices/StreamReader/Program.cs : line 23
+  6. Database migrations that is inside Persistance project must be updated by following command (in Vs Code Terminal) to create tables and relations.
+     - ```dotnet-ef database update --context SearchNavigateDbContext  --project Infrastructure/Persistence --startup-project API```
