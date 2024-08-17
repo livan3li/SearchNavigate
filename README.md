@@ -15,3 +15,4 @@ NOTE: To be able to run and start to project, there are some things that should 
       3. MicroServices/StreamReader/Program.cs : line 23
   6. Database migrations that is inside Persistance project must be updated by following command (in Vs Code Terminal) to create tables and relations.
      - ```dotnet-ef database update --context SearchNavigateDbContext  --project Infrastructure/Persistence --startup-project API```
+     - After running database update command, DataSeeding must be called only once when API is started in order to create data in database. This can be done by uncommenting 23th line in Infrastructure/Persistence/Extensions/Registration.cs. 
